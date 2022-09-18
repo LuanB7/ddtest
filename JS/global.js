@@ -6,8 +6,17 @@ function getCoordenada(event) {
         console.log(event.pageY);
         
     }
+
+    function transformSubPosTouch(event) {
+        sub.style.top = (event.touches[0].pageY - 28.5) + "px";
+        console.log("Touch: " + event.touches[0].pageY);
+        
+    }
+    
     
     sub.addEventListener("mousemove", transformSubPos);
+
+    sub.addEventListener("touchmove", transformSubPosTouch)
 
     sub.addEventListener("mouseup", function(event){
         //sub.style.left = event.pageX + "px";
