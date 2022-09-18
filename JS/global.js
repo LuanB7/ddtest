@@ -57,7 +57,7 @@ function getCoordenada(event) {
             sub.style.backgroundColor = 'red';
             console.log('maior');
 
-            sub.style.top = window.screen.availHeight - 57 + "px";
+            sub.style.top = "calc(100% - 57px)";
         }
         else {
             
