@@ -52,22 +52,26 @@ function getCoordenada(event) {
         event.preventDefault();
 
        
-        if (sub.style.top > (window.screen.availHeight / 3) * 2 + "px") { 
+        if (sub.style.top > `${window.screen.availHeight / 2}px`) { 
             
-            console.log(sub.style.top);
+            console.log("top: " + sub.style.top);
             console.log(window.screen.availHeight / 2);
             sub.style.backgroundColor = 'red';
             console.log('maior');
 
-            sub.style.top = "calc(100% - 57px)";
+            setTimeout(()=>{
+                sub.style.top = "calc(100% - 57px)";
+            }, 10);
+            
         }
         else {
-            
-            console.log(sub.style.top);
+            console.log("top: " + sub.style.top);
             sub.style.backgroundColor = 'blue';
             console.log(window.screen.availHeight / 2);
             console.log('menor');
-            sub.style.top = '57px';
+            setTimeout(()=>{
+                sub.style.top = "57px";
+            }, 10);
         }
 
         /*if (event.touches[0].pageY > 700) {
