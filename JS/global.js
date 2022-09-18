@@ -11,6 +11,7 @@ function getCoordenada(event) {
     }
 
     function transformSubPosTouch(event) {
+        event.preventDefault();
         sub.style.top = (event.touches[0].pageY - 28.5) + "px";
         sub.style.transition = '0s';
         console.log("Touch: " + event.touches[0].pageY);
@@ -24,10 +25,10 @@ function getCoordenada(event) {
 
     sub.addEventListener("mouseup", function(event){
         //sub.style.left = event.pageX + "px";
-        
+        event.preventDefault();
         sub.style.transiton = '0.4s';
         sub.removeEventListener("mousemove", transformSubPos);
-        sub.removeEventListener("touchstart", transformSubPosTouch);
+        sub.removeEventListener("touchmove", transformSubPosTouch);
 
         if (event.pageY > 700) {
             sub.style.backgroundColor = 'red';
@@ -47,7 +48,8 @@ function getCoordenada(event) {
         
         sub.style.transition = '0.4s';
         sub.removeEventListener("mousemove", transformSubPos);
-        sub.removeEventListener("touchstart", transformSubPosTouch);
+        sub.removeEventListener("touchmove", transformSubPosTouch);
+        event.preventDefault();
 
        
         if (sub.style.top > (window.screen.availHeight / 3) * 2 + "px") { 
