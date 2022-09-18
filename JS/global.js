@@ -26,18 +26,32 @@ function getCoordenada(event) {
     sub.addEventListener("mouseup", function(event){
         //sub.style.left = event.pageX + "px";
         event.preventDefault();
-        sub.style.transiton = '0.4s';
+        sub.style.transition = '0.4s';
         sub.removeEventListener("mousemove", transformSubPos);
         sub.removeEventListener("touchmove", transformSubPosTouch);
+        sub.removeEventListener("touchstart", transformSubPosTouch);
 
-        if (event.pageY > 700) {
+        if (sub.style.top > `${window.screen.availHeight / 2}px`) { 
+            
+            console.log("top: " + sub.style.top);
+            console.log(window.screen.availHeight / 2);
             sub.style.backgroundColor = 'red';
+            console.log('maior');
+
+            setTimeout(()=>{
+                sub.style.top = "calc(100% - 57px)";
+            }, 10);
+            
         }
         else {
+            console.log("top: " + sub.style.top);
             sub.style.backgroundColor = 'blue';
+            console.log(window.screen.availHeight / 2);
+            console.log('menor');
+            setTimeout(()=>{
+                sub.style.top = "57px";
+            }, 10);
         }
-        
-        console.log('a');
 
     });
 
@@ -49,6 +63,7 @@ function getCoordenada(event) {
         sub.style.transition = '0.4s';
         sub.removeEventListener("mousemove", transformSubPos);
         sub.removeEventListener("touchmove", transformSubPosTouch);
+        sub.removeEventListener("touchstart", transformSubPosTouch);
         event.preventDefault();
 
        
