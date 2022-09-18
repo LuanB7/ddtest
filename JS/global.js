@@ -45,6 +45,11 @@ function getCoordenada(event) {
   
               setTimeout(()=>{
                     sub.style.top = "calc(100% - 57px)";
+                    let smca = document.querySelectorAll(".sm-content-a");
+                    for (i=0; i < smca.length; i++) {
+                        smca[i].style.opacity = 0;
+                        smca[i].style.transform = "scale(0.9)";
+                    }
               }, 10);
               
           }
