@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overscroll-behavior: contain;
+}
+
 .sub-menu {
     width: 100%;
     background-color: white;
@@ -13,7 +17,7 @@
     left: 0;
 
     border-radius: 15px 15px 0px 0px;
-    overscroll-behavior: contain;
+    
 }
 
 .sm-changer {
