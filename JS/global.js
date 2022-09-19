@@ -33,8 +33,9 @@ function getCoordenada(event) {
           sub.removeEventListener("touchstart", transformSubPosTouch);
           sub.removeEventListener("mouseup", mouseUp);
           sub.removeEventListener("touchend", mouseUp);
-          
-          
+
+          // Risquinho do dragdrop
+          let labelrisco = document.querySelector(".sm-changer").getElementsByTagName("label")[0];
   
           if (sub.style.top > `${window.screen.availHeight / 2}px`) { 
               
@@ -50,6 +51,7 @@ function getCoordenada(event) {
                         smca[i].style.opacity = 0;
                         smca[i].style.transform = "scale(0.9)";
                     }
+                    labelrisco.style.backgroundColor = "black";
               }, 10);
               
           }
@@ -65,6 +67,7 @@ function getCoordenada(event) {
                         smca[i].style.opacity = 1;
                         smca[i].style.transform = "scale(1)";
                     }
+                    labelrisco.style.backgroundColor = "rgb(27, 176, 235)";
               }, 10);
           }
   
